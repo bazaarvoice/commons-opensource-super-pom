@@ -16,6 +16,7 @@
 
     <scm>
         <connection>scm:git:git@github.com:bazaarvoice/commons-opensource-super-pom.git</connection>
+        <url>github.com:bazaarvoice/commons-opensource-super-pom.git</url>
     </scm>
 
     <properties>
