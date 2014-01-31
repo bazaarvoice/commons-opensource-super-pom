@@ -21,6 +21,9 @@
     </scm>
 
     <properties>
+        <!-- Child projects may override these settings. -->
+        <java.minimum.version>1.6</java.minimum.version>
+
         <!-- maven-driving properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -54,7 +57,7 @@
             </testResource>
         </testResources>
         <plugins>
-            <!-- enforce Maven and Java version -->
+            <!-- Enforce minimum Maven and Java versions. -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
@@ -71,20 +74,20 @@
                                     <version>3.0</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>1.6</version>
+                                    <version>${java.minimum.version}</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-            <!-- use java 1.6 for all compilation -->
+            <!-- Require minimum of java 1.6 for all compilation (child projects may override via "java.minimum.version") -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>${java.minimum.version}</source>
+                    <target>${java.minimum.version}</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -114,22 +117,26 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.16</version>
+                    <version>2.15</version>
                     <configuration>
-                        <argLine>-Djava.awt.headless=true</argLine>
+                        <argLine>-Dfile.encoding=UTF-8 -Djava.awt.headless=true</argLine>
                         <excludes>
                             <!-- Exclude the Integration Tests; see also maven-failsafe-plugin configuration below -->
                             <exclude>test/integration/**</exclude>
                         </excludes>
-                        <systemProperties>
-                            <file.encoding>UTF-8</file.encoding> <!-- jvm should load resources assuming UTF-8 -->
-                        </systemProperties>
                     </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>2.4</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                        </archive>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -149,15 +156,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>2.16</version>
+                    <version>2.15</version>
                     <configuration>
-                        <argLine>-Djava.awt.headless=true</argLine>
+                        <argLine>-Dfile.encoding=UTF-8 -Djava.awt.headless=true</argLine>
                         <includes>
                             <include>test/integration/**</include>
                         </includes>
-                        <systemProperties>
-                            <file.encoding>UTF-8</file.encoding> <!-- jvm should load resources assuming UTF-8 -->
-                        </systemProperties>
                     </configuration>
                 </plugin>
                 <plugin>
