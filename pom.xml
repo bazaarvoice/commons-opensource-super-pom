@@ -11,14 +11,15 @@
 
     <groupId>com.bazaarvoice.commons</groupId>
     <artifactId>bv-opensource-super-pom</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
     <packaging>pom</packaging>
 
     <scm>
         <connection>scm:git:git@github.com:bazaarvoice/commons-opensource-super-pom.git</connection>
         <developerConnection>scm:git:git@github.com:bazaarvoice/commons-opensource-super-pom.git</developerConnection>
         <url>git@github.com:bazaarvoice/commons-opensource-super-pom.git</url>
-    </scm>
+      <tag>bv-opensource-super-pom-1.2</tag>
+  </scm>
 
     <properties>
         <!-- Child projects may override these settings. -->
