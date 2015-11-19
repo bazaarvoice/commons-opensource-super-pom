@@ -25,13 +25,16 @@
         <!-- Child projects may override these settings. -->
         <java.minimum.version>1.6</java.minimum.version>
 
-        <!-- maven-driving properties -->
+        <!-- maven-driving properties. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <build>
-        <!-- include all resources except for java and groovy sources in the compiled classpath -->
+        <!--
+            Include all resources except for Java and Groovy sources in the
+            compiled classpath.
+        -->
         <resources>
             <resource>
                 <directory>src/main/java</directory>
@@ -82,7 +85,10 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- Require minimum of java 1.6 for all compilation (child projects may override via "java.minimum.version") -->
+            <!--
+                Require minimum of java 1.6 for all compilation (child projects
+                may override via the "java.minimum.version" property).
+            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -91,10 +97,28 @@
                     <target>${java.minimum.version}</target>
                 </configuration>
             </plugin>
+            <!--
+                Add the OWASP dependency check plugin, which warns if using
+                insecure version. This must be kept up to date, at the latest
+                version.
+            -->
+            <plugin>
+               <groupId>org.owasp</groupId>
+               <artifactId>dependency-check-maven</artifactId>
+               <executions>
+                  <execution>
+                     <goals>
+                        <goal>check</goal>
+                     </goals>
+                     <configuration>
+                     </configuration>
+                   </execution>
+               </executions>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
-                <!-- Commonly used plugins -->
+                <!-- Commonly used plugins. -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
@@ -116,13 +140,21 @@
                     <version>3.2</version>
                 </plugin>
                 <plugin>
+                    <groupId>org.owasp</groupId>
+                    <artifactId>dependency-check-maven</artifactId>
+                    <version>1.3.1</version>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.17</version>
                     <configuration>
                         <argLine>-Dfile.encoding=UTF-8 -Djava.awt.headless=true</argLine>
                         <excludes>
-                            <!-- Exclude the Integration Tests; see also maven-failsafe-plugin configuration below -->
+                            <!--
+                                Exclude the Integration Tests; see also the
+                                maven-failsafe-plugin configuration below.
+                            -->
                             <exclude>test/integration/**</exclude>
                         </excludes>
                     </configuration>
@@ -188,7 +220,7 @@
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>2.9</version>
                 </plugin>
-                <!-- Specialized plugins -->
+                <!-- Specialized plugins. -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>xmlbeans-maven-plugin</artifactId>
@@ -219,17 +251,17 @@
                     <artifactId>maven-shade-plugin</artifactId>
                     <version>2.3</version>
                 </plugin>
-                <plugin>                
+                <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
                     <version>1.3.2</version>
                 </plugin>
-                <plugin>                
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-antrun-plugin</artifactId>
                     <version>1.7</version>
                 </plugin>
-                <plugin>                
+                <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
                     <version>1.9.1</version>
@@ -239,7 +271,7 @@
                     <artifactId>versions-maven-plugin</artifactId>
                     <version>2.1</version>
                 </plugin>
-                <!-- Bazaarvoice-authored plugins -->
+                <!-- Bazaarvoice-authored plugins. -->
                 <plugin>
                     <groupId>com.bazaarvoice.maven.plugins</groupId>
                     <artifactId>test-results-plugin</artifactId>
