@@ -1,2 +1,8 @@
 *.iml
 .idea
+
+# Sublime Text
+*.sublime-*
+
+# Sublime PlainTasks
+TODO
