@@ -21,9 +21,13 @@
         <tag>HEAD</tag>
     </scm>
 
+    <prerequisites>
+        <maven>3.3.9</maven>
+    </prerequisites>
+
     <properties>
         <!-- Child projects may override these settings. -->
-        <java.minimum.version>1.6</java.minimum.version>
+        <java.minimum.version>1.7</java.minimum.version>
 
         <!-- maven-driving properties. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -86,7 +90,7 @@
                 </executions>
             </plugin>
             <!--
-                Require minimum of java 1.6 for all compilation (child projects
+                Require minimum of java 1.7 for all compilation (child projects
                 may override via the "java.minimum.version" property).
             -->
             <plugin>
@@ -122,12 +126,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>2.6</version>
+                    <version>2.6.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>1.3.1</version>
+                    <version>1.4.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -137,17 +141,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.2</version>
+                    <version>3.7.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.owasp</groupId>
                     <artifactId>dependency-check-maven</artifactId>
-                    <version>1.3.1</version>
+                    <version>3.0.2</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.17</version>
+                    <version>2.20.1</version>
                     <configuration>
                         <argLine>-Dfile.encoding=UTF-8 -Djava.awt.headless=true</argLine>
                         <excludes>
@@ -162,7 +166,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>2.5</version>
+                    <version>2.6</version>
                     <configuration>
                         <archive>
                             <manifest>
@@ -174,7 +178,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
-                    <version>2.5</version>
+                    <version>2.6</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -184,12 +188,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>2.10.1</version>
+                    <version>2.10.5</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>2.17</version>
+                    <version>2.20.1</version>
                     <configuration>
                         <argLine>-Dfile.encoding=UTF-8 -Djava.awt.headless=true</argLine>
                         <includes>
@@ -205,7 +209,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>2.5.1</version>
+                    <version>2.5.3</version>
                     <configuration>
                         <scmCommentPrefix>branch admin -</scmCommentPrefix>
                     </configuration>
@@ -218,7 +222,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>2.9</version>
+                    <version>2.10</version>
                 </plugin>
                 <!-- Specialized plugins. -->
                 <plugin>
@@ -229,7 +233,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>xml-maven-plugin</artifactId>
-                    <version>1.0</version>
+                    <version>1.0.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.gmaven</groupId>
@@ -249,17 +253,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-shade-plugin</artifactId>
-                    <version>2.3</version>
+                    <version>2.4.3</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
-                    <version>1.3.2</version>
+                    <version>1.6.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-antrun-plugin</artifactId>
-                    <version>1.7</version>
+                    <version>1.8</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -269,7 +273,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>versions-maven-plugin</artifactId>
-                    <version>2.1</version>
+                    <version>2.5</version>
                 </plugin>
                 <!-- Bazaarvoice-authored plugins. -->
                 <plugin>
