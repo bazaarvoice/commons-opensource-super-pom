@@ -278,11 +278,6 @@
                 <!-- Bazaarvoice-authored plugins. -->
                 <plugin>
                     <groupId>com.bazaarvoice.maven.plugins</groupId>
-                    <artifactId>test-results-plugin</artifactId>
-                    <version>1.1</version>
-                </plugin>
-                <plugin>
-                    <groupId>com.bazaarvoice.maven.plugins</groupId>
                     <artifactId>solr-setup-plugin</artifactId>
                     <version>1.2</version>
                 </plugin>
