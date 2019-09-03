@@ -11,14 +11,14 @@
 
     <groupId>com.bazaarvoice.commons</groupId>
     <artifactId>bv-opensource-super-pom</artifactId>
-    <version>1.8-SNAPSHOT</version>
+    <version>1.8</version>
     <packaging>pom</packaging>
 
     <scm>
         <connection>scm:git:git@github.com:bazaarvoice/commons-opensource-super-pom.git</connection>
         <developerConnection>scm:git:git@github.com:bazaarvoice/commons-opensource-super-pom.git</developerConnection>
         <url>git@github.com:bazaarvoice/commons-opensource-super-pom.git</url>
-        <tag>HEAD</tag>
+        <tag>bv-opensource-super-pom-1.8</tag>
     </scm>
 
     <prerequisites>
