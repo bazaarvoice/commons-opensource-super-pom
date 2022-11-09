@@ -58,7 +58,6 @@
         <maven-antrun-plugin.version>3.0.0</maven-antrun-plugin.version>
         <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
         <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
-        <solr-setup-plugin.version>1.2</solr-setup-plugin.version>
     </properties>
 
     <build>
@@ -305,12 +304,6 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>versions-maven-plugin</artifactId>
                     <version>${versions-maven-plugin.version}</version>
-                </plugin>
-                <!-- Bazaarvoice-authored plugins. -->
-                <plugin>
-                    <groupId>com.bazaarvoice.maven.plugins</groupId>
-                    <artifactId>solr-setup-plugin</artifactId>
-                    <version>${solr-setup-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
