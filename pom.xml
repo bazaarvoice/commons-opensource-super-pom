@@ -50,7 +50,7 @@
         <maven-dependency-plugin.version>3.2.0</maven-dependency-plugin.version>
         <xmlbeans-maven-plugin.version>2.3.3</xmlbeans-maven-plugin.version>
         <xml-maven-plugin.version>1.0.2</xml-maven-plugin.version>
-        <gmaven-plugin.version>1.5</gmaven-plugin.version>
+        <gmaven-plugin.version>1.5-jenkins-3</gmaven-plugin.version>
         <maven-replacer-plugin.version>1.4.1</maven-replacer-plugin.version>
         <maven-jetty-plugin.version>6.1.26</maven-jetty-plugin.version>
         <maven-shade-plugin.version>3.2.4</maven-shade-plugin.version>
